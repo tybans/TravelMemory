@@ -1,14 +1,19 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
-function Card() {
+function Card(props) {
+    const navigate = useNavigate()
+    const visitDetails = ()=>{
+        navigate(`/experiencedetails/${props.id}`)
+    }
     return (
-        <div>
-            <div class="card" style={{width: "18rem", margin: "1rem"}}>
+        <div >
+            <div class="card" style={{ margin: "1rem"}}>
                 <div class="card-body">
-                    <h5 class="card-title">Trip Title</h5>
-                    <h6 class="card-subtitle mb-2 text-body-secondary">Trip Type</h6>
-                    <p class="card-text">Short Description: Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <button href="/experiencedetails" class="card-link btn btn-success">Click For More</button>
+                    <h5 class="card-title">{props.title}</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">{props.tripType}</h6>
+                    <p class="card-text">{props.description}</p>
+                    <button class="card-link btn btn-success" onClick={visitDetails}>Click For More</button>
                 </div>
             </div>
         </div>

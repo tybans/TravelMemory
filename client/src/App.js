@@ -20,7 +20,7 @@ function App() {
       element: <AddExperience/>
     },
     {
-      path: '/experiencedetails',
+      path: '/experiencedetails/:id',
       element: <ExperienceDetails/>
     }
   ])
