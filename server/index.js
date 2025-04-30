@@ -5,24 +5,27 @@ require('dotenv').config()
 // two domain means: our server and client port numbers
 // when we connect our server with client we need cors
 const cors = require('cors')
+const dbConnect = require('./dbConnection') // importing db connection file
 
-const app = express();
+const app = express(); // It confirms that we are using express framework to create our server.
 const Port = process.env.PORT
 
-const dbConnect = require('./dbConnection')
+
+// connecting to database
 dbConnect();
 
 // JSON middleware to handle json req
-app.use(express.json());
+app.use(express.json()); // It confirms that the server can parse incoming requests with JSON payloads. This is important for handling data sent in the body of POST or PUT requests, which is often in JSON format.
 
 // middleware for cors
-app.use(cors())
+app.use(cors()) // It confirms that the server can accept requests from different origins (domains). This is important for allowing your frontend application to communicate with your backend server, especially if they are hosted on different domains or ports.
 
 // importing routes
 const tripRoutes = require('./routes/trip.route')
 
 // middleware for routes
 app.use('/trip', tripRoutes) //http://localhost:5005/trip/addTrip --> POST ROUTE
+// We are using app.use because we are using multiple routes in our app. It is a way to define a base URL for a group of related routes. In this case, all routes defined in tripRoutes will be prefixed with /trip.
 
 
 

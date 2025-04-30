@@ -1,6 +1,6 @@
 import './App.css';
 // importing react-router-dom to fix App.js file with all the routing ways of information: eg- going to addexperinece route or experiencedetails route or homepage route 
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import {createBrowserRouter, RouterProvider} from "react-router-dom"; // Used to create a router for the application and provide it to the app.
 import Header from './components/UIC/Header';
 import Home from './components/pages/Home'
 import AddExperience from './components/pages/AddExperience';

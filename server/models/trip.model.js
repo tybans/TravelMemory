@@ -50,4 +50,5 @@ const tripSchema = mongoose.Schema({
 
 const TripModel = mongoose.model('tripdetails', tripSchema)
 
-module.exports = {TripModel}
+module.exports = {TripModel} //It confirms that we are exporting the TripModel so that it can be used in other parts of the application. This is a common practice in Node.js applications to keep the code organized and modular.
+// We are keeping this inside curly braces because we are exporting multiple things from this file. In this case, we are exporting the TripModel, which is the Mongoose model for the trip schema. By using curly braces, we can export multiple models or functions from the same file and import them as needed in other files.

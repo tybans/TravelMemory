@@ -1,7 +1,8 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
-function FeaturedCard(props) {
+function FeaturedCard(props) { // props is the object which contains all the information about the trip details which we are getting from the server
+    
     const navigate = useNavigate()
     const visitDetails = ()=>{
         navigate(`/experiencedetails/${props.id}`)
